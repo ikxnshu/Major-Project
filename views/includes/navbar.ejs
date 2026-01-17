@@ -1,22 +1,58 @@
+<style>
+  .search-btn {
+    background-color: #fe424d;
+    color: white;
+    margin-left: 0.5rem;
+    border-radius: 25px;
+    padding: 0 1rem 0 1rem;
+  }
+  .search-btn :hover {
+    background-color: #fe424d;
+    color: white;
+  }
+  .search-btn  i {
+    display: inline;
+    margin-right: 0.5rem;
+  }
+  .search-inp{
+    border-radius: 2rem;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+    font-size: 1rem;
+  }
+</style>
+
+
 <nav class="navbar navbar-expand-md bg-body-tertiary border-bottom sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/"><i class="fa-solid fa-joint"></i></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" >
+    <a class="navbar-brand" href="/listings"
+      ><i class="fa-solid fa-joint"></i
+    ></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/listings">All Listings</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/listings/new">Add New Listings</a>
-        </li>
-
-      </ul>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings">Explore</a>
+      </div>
+      <div class="navbar-nav ms-auto me-auto">
+         <input type="search" class=" form-control search-inp" placeholder="Search Destinations"  />
+  <button type="button" class="btn search-btn" data-mdb-ripple-init><i class="fa-solid fa-magnifying-glass"></i>search</button>
+</div>
+      </div>
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listings/new">Add Your Tour List</a>
+        <% if(!currUser){ %>
+        <a class="nav-link" href="/signup"><b>Sign Up</b></a>
+        <a class="nav-link" href="/login"><b>Log in</b></a>
+        <% } %> <% if(currUser){ %>
+        <a class="nav-link" href="/logout"><b>Log out</b></a>
+        <% } %>
+      </div>
     </div>
   </div>
 </nav>
